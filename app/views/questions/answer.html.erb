@@ -1,0 +1,29 @@
+<%# The answer.html.erb will display the question you ask your
+coach as well as his answer. The controller will need to read
+the question from params and compute an instance variable @answer
+for the view to display. Here are two requests that you should be
+able to handle:
+
+localhost:3000/answer?question=hello
+localhost:3000/answer?question=what time is it?
+
+1. If the message is I am going to work, the coach will answer Great!
+2. If the message has a question mark ? at the end, the coach will
+answer Silly question, get dressed and go to work!.
+3. Otherwise the coach will answer I don't care, get dressed and go
+to work! %>
+
+<div class="container">
+  <h1>Stupid Coaching</h1>
+  <div class="question_card">
+    <span class="question"><%= @question %></span> <%# this will print the question tag %>
+    <br>
+    <span class="who">-You</span>
+  </div>
+  <div class="answer_card">
+    <span class="answer"><%= @answer %></span> <%# this will print the answer tag %>
+    <br>
+    <span class="who">-Your coach</span>
+  </div>
+  <div class="backlink"><%= link_to "Ask a new question", "/ask" %></div>
+</div>
